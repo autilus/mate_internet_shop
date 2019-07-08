@@ -1,6 +1,6 @@
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.List" %>
-<%@ page import="model.Product" %>
+<%@ page import="com.nautilus.model.Good" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,9 +18,9 @@
             "<th> Description </th>" +
             "<th> Price </th>" +
             "</tr>");
-    List<Product> products = (List<Product>) request.getAttribute("products");
+    List<Good> products = (List<Good>) request.getAttribute("products");
     if (!products.isEmpty()) {
-        for (Product product : products) {
+        for (Good product : products) {
             printWriter.write("<tr>");
             printWriter.write("<td>" + product.getName() + "</td>");
             printWriter.write("<td>" + product.getDescription() + "</td>");
